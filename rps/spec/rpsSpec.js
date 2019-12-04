@@ -113,7 +113,7 @@ class UserInterfaceMock {
         this.invalidCalled = true
     }
 
-    verifyP1Wins() {
+    qverifyP1Wins() {
         expect(this.p1WinsCalled).toBeTruthy()
         expect(this.p2WinsCalled).toBeFalsy()
         expect(this.tieCalled).toBeFalsy()

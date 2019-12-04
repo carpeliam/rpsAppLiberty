@@ -2,19 +2,27 @@
   "name": "web",
   "version": "0.0.0",
   "dependencies": {
+    "@angular/common": "4.0.0",
+    "@angular/compiler": "4.0.0",
+    "@angular/core": "4.0.0",
+    "@angular/forms": "4.0.0",
+    "@angular/platform-browser": "4.0.0",
+    "@angular/platform-browser-dynamic": "4.0.0",
+    "babel-polyfill": "latest",
+    "reflect-metadata": "latest",
     "rps": "file:../rps",
-    "react": "latest",
-    "react-dom": "latest"
+    "rxjs": "^5.0.1",
+    "zone.js": "^0.8.4"
   },
   "devDependencies": {
     "watchify": "latest",
     "babelify": "latest",
     "@babel/core": "latest",
     "@babel/preset-env": "latest",
-    "@babel/preset-react": "latest",
-    "jasmine": "latest"
+    "jasmine": "latest",
+    "jsdom": "^15.2.1"
   },
   "scripts": {
-    "compile-test": "watchify spec/webSpec.js -o bundled/compiledWebSpec.js -t [ babelify --presets [ @babel/preset-env @babel/preset-react ] ]"
+    "compile-test": "watchify spec/webSpec.js -o bundled/compiledWebSpec.js -t [ babelify --presets [ @babel/preset-env ] ]"
   }
 }
