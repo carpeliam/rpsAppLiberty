@@ -17,7 +17,7 @@ class RPS {
             (player1Throw === Shape.Scissors && player2Throw === Shape.Rock) ||
             (player1Throw === Shape.Paper && player2Throw === Shape.Scissors)) {
             this._userInterface.p2Wins();
-        } els
+        } else {
             this._userInterface.p1Wins();
         }
     }
