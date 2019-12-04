@@ -7,14 +7,14 @@ const { UseCaseFactory } = require("rps")
 
 require('reflect-metadata')
 
-const jsdom = require("jsdom")
-const { JSDOM } = jsdom
-const dom = new JSDOM(`<!DOCTYPE html><p>Hello world</p>`)
-const document = dom.window.document
+// const jsdom = require("jsdom")
+// const { JSDOM } = jsdom
+// const dom = new JSDOM(`<!DOCTYPE html><p>Hello world</p>`)
+// const document = dom.window.document
 
 describe("play form", function () {
     describe("when the play use case tells the UI that the input is invalid", function () {
-        it("tells the user that their input is invalid", function () {
+        it("tells the user that their input is invalid", function (done) {
             let domFixture = document.createElement("rps-app")
             domFixture.id = "hello test world!"
             document.querySelector("body").appendChild(domFixture)
@@ -36,9 +36,13 @@ describe("play form", function () {
 
             platformBrowserDynamic().bootstrapModule(RPSTestModule)
 
-            document.querySelector("button").click()
+            setTimeout(() => {
+                document.querySelector("button").click()
 
-            expect(domFixture.innerText).toContain("INVALID")
+                expect(domFixture.innerText).toContain("INVALID")
+                done()
+            })
+
         })
     })
 })

@@ -1,10 +1,9 @@
 const Shape = require('./shape')
 
 class RPS {
-    _validShapes = [Shape.Rock, Shape.Paper, Shape.Scissors]
-    _userInterface
 
     constructor(userInterface) {
+        this._validShapes = [Shape.Rock, Shape.Paper, Shape.Scissors]
         this._userInterface = userInterface
     }
 
